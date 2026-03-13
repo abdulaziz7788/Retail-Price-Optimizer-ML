@@ -21,11 +21,3 @@ An AI-driven system built to predict customer demand and calculate the optimal p
 ---
 
 
-
-## 📁 Repository Structure
-```text
-├── data/           # Raw and cleaned CSV datasets
-├── notebooks/      # Google Colab / Jupyter notebooks for experiments
-├── src/            # Final Python scripts for the optimizer
-├── models/         # Saved model files (.joblib)
-└── reports/        # Visualizations and final PDF report
