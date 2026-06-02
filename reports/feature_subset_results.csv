@@ -1,0 +1,5 @@
+Feature Subset,Technique,Number of Input Columns,MAE,RMSE,R2
+All cleaned features,Random Forest Regressor,15,22.54396893058473,53.09153068953638,0.7753093018276964
+Top numeric + product category,Random Forest Regressor,9,22.88318804115419,54.21852119524198,0.7656688972012261
+Top numeric + prepared categorical features,Random Forest Regressor,11,22.94433639043023,54.315399159212454,0.7648307407470754
+Top numeric predictors only,Random Forest Regressor,8,26.585304529607637,60.2190143919175,0.7109307561145672

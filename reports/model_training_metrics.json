@@ -1,0 +1,223 @@
+{
+  "run_timestamp": "2026-06-01T12:36:21",
+  "dataset": {
+    "rows": 107529,
+    "columns": 35,
+    "target": "price",
+    "price_min": 0.85,
+    "price_mean": 107.02040156608915,
+    "price_median": 72.99,
+    "price_max": 887.0,
+    "categories": 71,
+    "excluded_target_leakage_columns": "total_order_item_value, freight_ratio, freight_ratio_percent, price_range, category_avg_price, category_median_price, price_vs_category_median"
+  },
+  "train_rows": 75270,
+  "test_rows": 32259,
+  "target": "price",
+  "numeric_features": [
+    "order_item_id",
+    "freight_value",
+    "product_name_lenght",
+    "product_description_lenght",
+    "product_photos_qty",
+    "product_weight_g",
+    "product_length_cm",
+    "product_height_cm",
+    "product_width_cm",
+    "product_volume_cm3",
+    "product_demand_count",
+    "category_demand_count"
+  ],
+  "categorical_features": [
+    "product_category_name_english",
+    "freight_level",
+    "product_size_level"
+  ],
+  "excluded_target_leakage_columns": [
+    "total_order_item_value",
+    "freight_ratio",
+    "freight_ratio_percent",
+    "price_range",
+    "category_avg_price",
+    "category_median_price",
+    "price_vs_category_median"
+  ],
+  "best_model": "Random Forest Regressor",
+  "best_params": {
+    "Random Forest Regressor": {
+      "max_depth": null,
+      "min_samples_leaf": 1,
+      "n_estimators": 140
+    },
+    "Gradient Boosting Regressor": {
+      "learning_rate": 0.1,
+      "max_depth": 2,
+      "n_estimators": 140
+    }
+  },
+  "holdout_results": [
+    {
+      "Technique": "Random Forest Regressor",
+      "MAE (BRL)": 22.54396893058473,
+      "RMSE (BRL)": 53.09153068953638,
+      "R2": 0.7753093018276964
+    },
+    {
+      "Technique": "Gradient Boosting Regressor",
+      "MAE (BRL)": 52.893311532892795,
+      "RMSE (BRL)": 87.29159620086455,
+      "R2": 0.39259345080385377
+    },
+    {
+      "Technique": "Linear Regression Baseline",
+      "MAE (BRL)": 57.856279617201444,
+      "RMSE (BRL)": 92.84809039187931,
+      "R2": 0.3128041117166691
+    }
+  ],
+  "cross_validation_results": [
+    {
+      "Technique": "Random Forest Regressor",
+      "CV Rows": 12000,
+      "CV MAE Mean": 39.28731796447211,
+      "CV MAE Std": 1.6845705536713889,
+      "CV RMSE Mean": 75.38974531417435,
+      "CV RMSE Std": 4.282965081119485,
+      "CV R2 Mean": 0.5502034846362215,
+      "CV R2 Std": 0.031001458644288608
+    },
+    {
+      "Technique": "Gradient Boosting Regressor",
+      "CV Rows": 12000,
+      "CV MAE Mean": 54.03852707009662,
+      "CV MAE Std": 1.5010670964910025,
+      "CV RMSE Mean": 88.3747691719119,
+      "CV RMSE Std": 3.505793801174632,
+      "CV R2 Mean": 0.3818892678690523,
+      "CV R2 Std": 0.024382495986201982
+    }
+  ],
+  "feature_subset_results": [
+    {
+      "Feature Subset": "All cleaned features",
+      "Technique": "Random Forest Regressor",
+      "Number of Input Columns": 15,
+      "MAE": 22.54396893058473,
+      "RMSE": 53.09153068953638,
+      "R2": 0.7753093018276964
+    },
+    {
+      "Feature Subset": "Top numeric + product category",
+      "Technique": "Random Forest Regressor",
+      "Number of Input Columns": 9,
+      "MAE": 22.88318804115419,
+      "RMSE": 54.21852119524198,
+      "R2": 0.7656688972012261
+    },
+    {
+      "Feature Subset": "Top numeric + prepared categorical features",
+      "Technique": "Random Forest Regressor",
+      "Number of Input Columns": 11,
+      "MAE": 22.94433639043023,
+      "RMSE": 54.315399159212454,
+      "R2": 0.7648307407470754
+    },
+    {
+      "Feature Subset": "Top numeric predictors only",
+      "Technique": "Random Forest Regressor",
+      "Number of Input Columns": 8,
+      "MAE": 26.585304529607637,
+      "RMSE": 60.2190143919175,
+      "R2": 0.7109307561145672
+    }
+  ],
+  "top_features": [
+    {
+      "feature": "freight_value",
+      "importance": 0.2020259310168141
+    },
+    {
+      "feature": "product_weight_g",
+      "importance": 0.14550078300431965
+    },
+    {
+      "feature": "product_description_lenght",
+      "importance": 0.10148381033259538
+    },
+    {
+      "feature": "product_demand_count",
+      "importance": 0.0660749274755594
+    },
+    {
+      "feature": "product_volume_cm3",
+      "importance": 0.05756887493524213
+    },
+    {
+      "feature": "product_height_cm",
+      "importance": 0.05459956710877821
+    },
+    {
+      "feature": "product_name_lenght",
+      "importance": 0.05149714378666101
+    },
+    {
+      "feature": "product_length_cm",
+      "importance": 0.04935164826984212
+    },
+    {
+      "feature": "product_width_cm",
+      "importance": 0.04298856013828374
+    },
+    {
+      "feature": "category_demand_count",
+      "importance": 0.0366042504312419
+    },
+    {
+      "feature": "product_category_name_english_watches_gifts",
+      "importance": 0.03162296561152956
+    },
+    {
+      "feature": "product_photos_qty",
+      "importance": 0.02691824011954889
+    },
+    {
+      "feature": "product_category_name_english_health_beauty",
+      "importance": 0.010862845094591705
+    },
+    {
+      "feature": "product_category_name_english_cool_stuff",
+      "importance": 0.010378780936818054
+    },
+    {
+      "feature": "product_category_name_english_computers_accessories",
+      "importance": 0.008714290501598302
+    },
+    {
+      "feature": "product_category_name_english_computers",
+      "importance": 0.008257082447113376
+    },
+    {
+      "feature": "product_category_name_english_consoles_games",
+      "importance": 0.006823439002867364
+    },
+    {
+      "feature": "product_category_name_english_perfumery",
+      "importance": 0.006071570509829538
+    },
+    {
+      "feature": "product_category_name_english_telephony",
+      "importance": 0.005838752777505492
+    },
+    {
+      "feature": "product_category_name_english_auto",
+      "importance": 0.005814429849449814
+    }
+  ],
+  "figures": {
+    "price_distribution": "reports\\figures\\price_distribution.png",
+    "model_error_comparison": "reports\\figures\\model_error_comparison.png",
+    "predicted_vs_actual": "reports\\figures\\predicted_vs_actual.png",
+    "residuals": "reports\\figures\\residuals.png",
+    "feature_importance": "reports\\figures\\feature_importance.png"
+  }
+}
